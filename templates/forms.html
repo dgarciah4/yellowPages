@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Yellow Pages Form</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap-5.0.2-dist/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="shortcut icon" href="#">
+
+</head>
+<body>
+
+
+  {% extends "base.html"%}
+  {% block content %}
+  <h2>Enter Business or Company Information</h2>
+  <h2>_______________________________________________________________</h2>
+  <br><br>
+  <div class="d-flex justify-content-center">
+
+  <form action="./forms" class="form-group" method="post">
+
+
+      <label for="name"> Company Name </label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="ABC Company"style="width: 800px;">
+<br>
+
+      <label for="addr">Address</label>
+      <input type="text" name="addr" class="form-control" id="addr" placeholder="1234 Main St"style="width: 800px;">
+<br>
+      <label for="exampleInputEmail1"> Email Address </label>
+      <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"style="width: 800px;">
+<br>
+      <label for="pNum">Phone Number </label>
+      <input type="number" class="form-control" name="pNum" id="pNum" placeholder="0001234567"style="width: 800px;">
+<br>
+<button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+
+    <br>
+</div>
+<div class="d-flex justify-content-center">
+
+<form action="./records" method="get">
+  <button type="submit" class="btn btn-info"> <a href="{{url_for('records')}}">View All</a></button>
+</form>
+</div>
+  {% endblock %}
+</body>
